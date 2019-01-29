@@ -6,9 +6,10 @@ const burger = require("../models/burger.js");
 
 // CREATE ALL OUR ROUTES AND SETUP LOGIC WITHIN THOSE ROUTES
 router.get("/",(request,response)=>{
+    // SELECT ALL RECORDS FROM BURGERS TABLE TO USE FOR HANDLEBARS OBJECT
     burger.selectAll((data)=>{
         var handlebarsObject = {
-            burger: data
+            burgers: data
         };
         console.log(handlebarsObject);
         response.render('index',handlebarsObject);
