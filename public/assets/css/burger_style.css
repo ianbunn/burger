@@ -1,0 +1,13 @@
+body {
+    background-image: url("../img/warholburgers.jpg");
+    background-repeat: repeat-y repeat-x;
+    background-color: tan;
+}
+.container {
+    background-color: white;
+    border-radius: 10px;
+    padding: 0 10px 5px 10px;
+}
+h1{
+    text-align: center;
+}
