@@ -6,10 +6,13 @@ const burger = require("../models/burger.js");
 
 // CREATE ALL OUR ROUTES AND SETUP LOGIC WITHIN THOSE ROUTES
 router.get("/",(request,response)=>{
-    var handlebarsObject = {
-        burgers: response
-    };
-    // console.log(handlebarsObject.burgers);
+    burger.selectAll((data)=>{
+        var handlebarsObject = {
+            burger: data
+        };
+        console.log(handlebarsObject);
+        response.render('index',handlebarsObject);
+    })
 });
 
 // EXPORT ROUTES FOR 'server.js'

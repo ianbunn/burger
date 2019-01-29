@@ -1,4 +1,4 @@
-const express = require("express");
+const express = require('express');
 const handlebars = require('express-handlebars');
 const routes = require('./controllers/burgers_controller.js')
 
@@ -21,8 +21,7 @@ app.engine('handlebars',handlebars({
 }));
 app.set('view engine','handlebars');
 
-// GIVE THE SERVER ACCESS TO THEM
-// NEED TO WORK ON ROUTES
+// GIVE THE SERVER ACCESS TO ROUTES
 app.use(routes);
 
 // START SERVER
