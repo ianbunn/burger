@@ -11,7 +11,6 @@ router.get("/",(request,response)=>{
         var handlebarsObject = {
             burgers: data
         };
-        console.log(handlebarsObject);
         response.render('index',handlebarsObject);
     })
 });
@@ -28,9 +27,15 @@ router.post('/api/burgers',(request,response)=>{
 
 router.put("/api/burgers/:id",(request,response)=>{
     var condition = `ID = ${request.params.id}`;
+    var newDevouredState = request.body.devoured;
+    if(newDevouredState === 'true'){
+        newDevouredState = 0
+    } else {
+        newDevouredState = 1
+    }
     
     burger.updateOne({
-        devoured: request.body.devoured
+        devoured: newDevouredState
     },
     condition,
     (result)=>{

@@ -10,12 +10,12 @@ var burger = {
     },
     // COLUMNS AND VALUES ARE TYPE OF ARRAY
     insertOne: (columns,values,callback)=>{
-        orm.insertOne("burgers",columns,values,(response=>{
+        orm.insertOne('burgers',columns,values,(response=>{
             callback(response);
         }));
     },
     updateOne: (objectColumnValues,condition,callback)=>{
-        orm.updateOne("burgers",objectColumnValues,condition,(response)=>{
+        orm.updateOne('burgers',objectColumnValues,condition,(response)=>{
             callback(response);
         });
     }
